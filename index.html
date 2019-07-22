@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="icon" href="https://i.udemycdn.com/course/750x422/695566_74ab_2.jpg">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <!------------------------------------------------------------------->
+    <div class="container-wrap-wrap" id="main-container">
+    <!------------------------------------------------------------------->
+        <div class="jumbotron-fluid" id= "top-jumbotron">
+            <h1></h1><div class="firstHead">JANKEN!</div></h1>
+        <h2><div class="secondHead">Rock Paper Scissors</div></h2>
+        </div>
+    <!------------------------------------------------------------------->
+    <div class="container-wrap-wrap" id="game-container">    
+    <!------------------------------------------------------------------->
+        <div class="row" id="instruction">
+            <div class="col-sm-12" id="intro">Click on a gif to make your selection</div>
+        </div>
+    <!------------------------------------------------------------------->
+        <div class="row" id="rpsBtns">   
+            <div class="btn" id="rock">
+            <img src="https://media2.giphy.com/media/3PAcdkstdRfpK/giphy.gif?cid=790b76115d33c672363951396bbddbcc&rid=giphy.gif">
+            ROCK</div>
+            <div class="btn" id="paper">
+            <img src="https://media3.giphy.com/media/35MAdPmdmRO3oCmWN0/giphy.gif?cid=790b76115d33c5de3642615551420ca1&rid=giphy.gif">
+            PAPER</div>
+            <div class="btn" id="scissors">
+            <img src= "https://media2.giphy.com/media/g8vTvEdvYa2xG/giphy.gif?cid=790b76115d33c4334a4f4a4855d15b7b&rid=giphy.gif">
+            SCISSORS</div> 
+        </div>
+    <!------------------------------------------------------------------->    
+        <div class="row" id="selected">
+            <div class="col-md-3" id="player1">Player 1
+                <div class="card" id="select1"> 
+                    <div class="card-title" id="name1"></div> 
+                </div>
+            </div>      
+        <div class="col-md-3" id="player2">Player 2
+                <div class="card" id="select2"> 
+                    <div class="card-title" id="name2"></div> 
+                </div>
+            </div> 
+        </div>
+    <!-------------------------------------------------------------------> 
+        <div class="row" id="stats">
+            <div class="jumbotron" id="player1Stats">Player 1:
+                <div class="wins" id="wins1"></div>
+                <div class="losses" id="losses1"></div>
+            </div>
+            <div class="jumbotron" id="player2Stats">Player 2:
+                <div class="wins" id="wins2"></div>
+                <div class="losses" id="losses2"></div>
+            </div>
+        </div>
+    <!-------------------------------------------------------------------> 
+    </div>
+    <!------------------------------------------------------------------->
+    <div class="container-wrap-wrap" id="chat-container">
+        <div id="wrapper">
+            <div id="menu">
+                <p class="chat">Chat <b></b></p>
+                <p class="logout"><a id="exit" href="#">X</a></p>
+            </div>
+             
+            <div id="chatbox"></div>
+             
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" placeholder="Type your message here"    >
+                <input name="submitmsg" type="submit"  id="submitmsg" value="Send"/>
+            </form>
+         </div>
+    </div>
+    </div>
+    <!------------------------------------------------------------------->
+    <footer>
+        <div class = "col-md-10" id="footer"> 
+            <div id="gif"><p>Powered by</p><img  src ="assets/images/Poweredby_100px_Badge.gif"></div>
+        </div>
+    </footer>
+    <!-------------------------------------------------------------------> 
+         
+    <!-- Link to JS -->
+    <script src="assets/javascript/app.js"
+     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+     src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js">
+    </script>    
+</body>
+</html>

@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Outline|Butterfly+Kids|Ewert|Fascinate|Geostar|Geostar+Fill|Jacques+Francois+Shadow|Londrina+Shadow&display=swap');
+
+body{
+    background-image:URL("https://cdn.hipwallpaper.com/i/23/69/R89pCs.png");
+    background-image:no-repeat;
+    background-color: black;
+    height: 100%
+}
+
+.container-wrap-wrap {
+    background-color: white;
+    cursor: pointer;
+    max-width: 960px;
+    margin:auto;
+    opacity: 1.0;
+}
+
+#main-container{
+    height:850px;
+
+}
+
+.jumbotron-fluid{
+    font-family: 'Jacques Francois Shadow', cursive;
+}
+
+#top-jumbotron{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+    border-bottom: grey 1px solid;
+}
+
+h1{
+
+}
+
+.firstHead{
+    font-size: 200%;
+    font-weight: bold;
+}
+
+h2{
+
+}
+
+.secondHead{
+    font-weight: bold;
+    font-size: 125%;
+    text-align: center;
+}
+
+#game-container{
+    width:100%;
+    float: left;
+    margin-right: 0%;
+    height:100%;
+}
+
+.row{
+
+}
+
+#instruction{
+
+}
+
+#intro{
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#rpsBtns{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#rpsBtns :hover{
+    color: white;
+    background-color: teal;
+    border: none;
+}
+
+#rock{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10px;
+}
+
+#rock img{
+    border: 1px solid black;
+    height:200px;
+    width:200px;
+}
+
+#paper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10px;
+}
+
+#paper img{
+    border: 1px solid black;
+    height:200px;
+    width:200px;
+}
+
+#scissors{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10px;
+}
+
+#scissors img{
+    border: 1px solid black;
+    height:200px;
+    width:200px;
+}
+
+#selected{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#player1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10%;
+}
+
+#name1{
+    
+}
+
+#player2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10%;
+}
+
+#select2{
+    
+}
+
+#name2{
+    
+}
+
+#stats{
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-self: center;
+
+
+}
+
+#player1Stats{
+    width:  40%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding:5px;
+    background-color: black;
+    color: white;
+}
+
+.jumbotron{
+
+}
+
+#wins1{
+    
+}
+
+.losses{
+    
+}
+
+#losses1{
+    
+}
+
+#player2Stats{
+    width:40%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding:5px;
+    background-color: black;
+    color: white;
+
+}
+
+.wins{
+    
+}
+
+#wins2{
+    
+}
+
+#losses2{
+    
+}
+
+footer{
+
+}
+
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    border-top: darkgray 2px solid;
+    background-color:black;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;  
+}
+
+ p{
+    font-style: italic;
+    display: flex;
+    align-self: center;  
+ }
+
+#gif{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start; 
+}
+
+img{
+    height: 50px;
+    width: 50px;
+}
+
+#wrapper{
+    height:100%;
+    margin-left: 0%;
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding:5px;
+    background-color: white;
+}
+
+#chat-container{
+    width:100%;
+    margin-left: 0%;
+    border: 1px solid black;
+    padding:5px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+
+}
+
+a {
+    color:#0000FF;
+    text-decoration:none; 
+}
+  
+  
+#chatbox {
+    height:50%;
+    overflow:auto; 
+    width: 80%;
+    margin-top: 5px;
+    border: black solid 1px;
+}
+  
+#usermsg {
+    border:1px solid black;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
+.chat { 
+    float:left; 
+}
+
+#submitmsg{
+    float:right;
+}
+
+  
+.logout { 
+    clear:both;
+    
+    border: solid black 1px;
+}   
+    
+.logout:hover { 
+    clear:both;
+    color:red; 
+} 
+
+#menu{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
