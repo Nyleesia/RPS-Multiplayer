@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="icon" href="https://i.udemycdn.com/course/750x422/695566_74ab_2.jpg">
     <!-- Link to CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- Chat reference -->
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -23,7 +28,23 @@
         <div class="jumbotron-fluid" id= "top-jumbotron">
             <h1></h1><div class="firstHead">JANKEN!</div></h1>
         <h2><div class="secondHead">Rock Paper Scissors</div></h2>
-        </div>
+    </div>
+        <form>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input  id="email"  type="email" class="form-control"placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input id="username" type="username" class="form-control"  placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password:</label>
+                <input id="password" type="password" class="form-control"  placeholder="Password">
+            </div>
+            <button id="userSubmit" type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+        
     <!------------------------------------------------------------------->
     <div class="container-wrap-wrap" id="game-container">    
     <!------------------------------------------------------------------->
@@ -79,8 +100,8 @@
             <div id="chatbox"></div>
              
             <form name="message" action="">
-                <input name="usermsg" type="text" id="usermsg" placeholder="Type your message here"    >
-                <input name="submitmsg" type="submit"  id="submitmsg" value="Send"/>
+                <input name="usermsg" type="text" id="usermsg" placeholder="Type your message here"/>    >
+                <input name="submitmsg" type="submit"  id="submitMsg" value="Send"/>
             </form>
          </div>
     </div>
@@ -92,11 +113,10 @@
         </div>
     </footer>
     <!-------------------------------------------------------------------> 
-         
     <!-- Link to JS -->
-    <script src="assets/javascript/app.js"
-     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-     src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js">
-    </script>    
-</body>
+    <script src="assets/javascript/app.js"></script>
+  </body>
 </html>
+
+
+
