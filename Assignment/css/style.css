@@ -1,0 +1,12 @@
+.clear {
+    clear:both;
+}
+
+.gifImage {
+    float:left;
+    margin: 10px;
+}
+
+.gifContainer {
+    float:left;
+}

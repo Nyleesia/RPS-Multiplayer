@@ -16,68 +16,58 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Firebase References -->
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-    <!-- Chat reference -->
-    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
     <!------------------------------------------------------------------->
     <div class="container-wrap-wrap" id="main-container">
-    <!------------------------------------------------------------------->
+        <!------------------------------------------------------------------->
         <div class="jumbotron-fluid" id= "top-jumbotron">
-            <h1></h1><div class="firstHead">JANKEN!</div></h1>
-        <h2><div class="secondHead">Rock Paper Scissors</div></h2>
-    </div>
-        <form>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input  id="email"  type="email" class="form-control"placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input id="username" type="username" class="form-control"  placeholder="Enter username">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password:</label>
-                <input id="password" type="password" class="form-control"  placeholder="Password">
-            </div>
-            <button id="userSubmit" type="submit" class="btn btn-primary" >Submit</button>
-        </form>
-        
-    <!------------------------------------------------------------------->
-    <div class="container-wrap-wrap" id="game-container">    
-    <!------------------------------------------------------------------->
-        <div class="row" id="instruction">
-            <div class="col-sm-12" id="intro">Click on a gif to make your selection</div>
-        </div>
-    <!------------------------------------------------------------------->
-        <div class="row" id="rpsBtns">   
-            <div class="btn" id="rock">
-            <img src="https://media2.giphy.com/media/3PAcdkstdRfpK/giphy.gif?cid=790b76115d33c672363951396bbddbcc&rid=giphy.gif">
-            ROCK</div>
-            <div class="btn" id="paper">
-            <img src="https://media3.giphy.com/media/35MAdPmdmRO3oCmWN0/giphy.gif?cid=790b76115d33c5de3642615551420ca1&rid=giphy.gif">
-            PAPER</div>
-            <div class="btn" id="scissors">
-            <img src= "https://media2.giphy.com/media/g8vTvEdvYa2xG/giphy.gif?cid=790b76115d33c4334a4f4a4855d15b7b&rid=giphy.gif">
-            SCISSORS</div> 
-        </div>
-    <!------------------------------------------------------------------->    
-        <div class="row" id="selected">
-            <div class="col-md-3" id="player1">Player 1
-                <div class="card" id="select1"> 
-                    <div class="card-title" id="name1"></div> 
+                <h1></h1><div class="firstHead">JANKEN!!!</div></h1>
+            <h2><div class="secondHead">Rock!  Paper!  Scissors! </div></h2>
+
+            <div class="row" id="userForm">
+            <form>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input id="username" type="username" class="form-control"  placeholder="Enter username">
                 </div>
-            </div>      
-        <div class="col-md-3" id="player2">Player 2
-                <div class="card" id="select2"> 
-                    <div class="card-title" id="name2"></div> 
-                </div>
-            </div> 
+                <button id="userSubmit" type="submit" class="btn">Submit</button>
+            </form>
+            </div>
         </div>
-    <!-------------------------------------------------------------------> 
-        <div class="row" id="stats">
+        <!-------------------------------------------------------------------> 
+        <div class= "row" id="gamePlayandChat">  <!---Side by side-->
+        <!-------------------------------------------------------------------> 
+            <div class="col-md-8" id="gamePlay">
+                <div id="players">
+                    <div class="col-md-2" id="player1">Player 1
+                    </div>
+                <div class="col-md-2" id="player2">Player 2
+                    </div>
+                </div>         
+     <!------------------------------------------------------------------->
+        <div id="intro">Click on a gif to make your selection</div>
+    <!------------------------------------------------------------------->
+        <div id="game">
+            <div class="choice" value="1" id="rock"> 
+                <img src="https://media2.giphy.com/media/3PAcdkstdRfpK/giphy.gif?cid=790b76115d33c672363951396bbddbcc&rid=giphy.gif">
+                ROCK!!! </div>
+            <div class="clear"> </div>
+            <div class="choice"value="2" id="paper"> 
+                <img src="https://media3.giphy.com/media/35MAdPmdmRO3oCmWN0/giphy.gif?cid=790b76115d33c5de3642615551420ca1&rid=giphy.gif">
+                PAPER!!! </div>
+            <div class="clear"> </div>
+            <div class="choice" value="3" id="scissors"> 
+                <img src= "https://media2.giphy.com/media/g8vTvEdvYa2xG/giphy.gif?cid=790b76115d33c4334a4f4a4855d15b7b&rid=giphy.gif">
+                SCISSORS!!! </div>
+            <div class="clear"> </div>    
+        </div>
+    <!------------------------------------------------------------------->
+        <div id="stats">
             <div class="jumbotron" id="player1Stats">Player 1:
                 <div class="wins" id="wins1"></div>
                 <div class="losses" id="losses1"></div>
@@ -85,26 +75,28 @@
             <div class="jumbotron" id="player2Stats">Player 2:
                 <div class="wins" id="wins2"></div>
                 <div class="losses" id="losses2"></div>
+            </div> 
+        </div>
+            <div class="updates">
+            <div id="head">Round Results:</div>
+            <div id="gameUpdates"></div>
+        </div>
+    </div>
+ <!------------------------------------------------------------------->   
+    <div class="col-md-4" id="chatContainer"> 
+        <div id="chat">
+            <div id="messageBoard">Game Alerts:</div>
+            <div id="gameAlerts"> 
+                </div>
+            <div id="messageBoard">Message Board:</div>
+            <div id="messages"> 
+            </div>
+            <form>
+                <input id="chatinput" type="text" placeholder="Enter text here">
+            </form>
+        </div>
             </div>
         </div>
-    <!-------------------------------------------------------------------> 
-    </div>
-    <!------------------------------------------------------------------->
-    <div class="container-wrap-wrap" id="chat-container">
-        <div id="wrapper">
-            <div id="menu">
-                <p class="chat">Chat <b></b></p>
-                <p class="logout"><a id="exit" href="#">X</a></p>
-            </div>
-             
-            <div id="chatbox"></div>
-             
-            <form name="message" action="">
-                <input name="usermsg" type="text" id="usermsg" placeholder="Type your message here"/>    >
-                <input name="submitmsg" type="submit"  id="submitMsg" value="Send"/>
-            </form>
-         </div>
-    </div>
     </div>
     <!------------------------------------------------------------------->
     <footer>
@@ -113,8 +105,9 @@
         </div>
     </footer>
     <!-------------------------------------------------------------------> 
-    <!-- Link to JS -->
-    <script src="assets/javascript/app.js"></script>
+<!-- developer javascript link to source -->
+<script src= "assets/javascript/app.js"></script>
+
   </body>
 </html>
 

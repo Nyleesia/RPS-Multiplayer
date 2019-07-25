@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Outline|Butterfly+Kids|Ewert|Fascinate|Geostar|Geostar+Fill|Jacques+Francois+Shadow|Londrina+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Outline|Butterfly+Kids|Ewert|Fascinate|Geostar|C|Jacques+Francois+Shadow|Londrina+Shadow&display=swap');
 
 body{
     background-image:URL("https://cdn.hipwallpaper.com/i/23/69/R89pCs.png");
@@ -15,7 +15,6 @@ body{
 }
 
 #main-container{
-    height:850px;
     cursor: pointer;
 }
 
@@ -24,49 +23,111 @@ body{
 }
 
 #top-jumbotron{
+    font-weight:bold;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    border-bottom: grey 1px solid;
+    border-bottom: teal 1px solid;
+}
+#userForm{
+    align-self: center;
+    width:75%;
+    padding: 10px;
+    padding-top: 20px;
+    border-top:5px dotted teal;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+#userForm .btn{
+    font-size: 20px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: teal;
+}
+
+#username{
+    border: 1px solid teal;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1{
-
+    font-weight: bold; 
 }
 
 .firstHead{
-    font-size: 200%;
+    font-size: 50px;
     font-weight: bold;
 }
 
 h2{
-
+    font-weight: bold; 
 }
 
 .secondHead{
-    font-weight: bold;
-    font-size: 125%;
+    font-size: 40px;
     text-align: center;
 }
 
-#game-container{
-    width:100%;
-    float: left;
+#gamePlayandChat{
+    width:960px;
+    padding-left:0px;
+}
+
+#gamePlay{
+    width: 70%;
     margin-right: 0%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    float: left;
     height:100%;
+    padding:0px;
 }
 
-.row{
-
+#players{
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    height:20%;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-#instruction{
+#player1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    width: 40%; 
+    padding:5px;
+}
 
+#player2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    width: 40%; 
+    padding:5px;
 }
 
 #intro{
+    margin-top: 15px;
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
     font-size: 20px;
@@ -74,78 +135,108 @@ h2{
     margin-bottom: 15px;
 }
 
-#rpsBtns{
+#game{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
+    padding:10px;
+    margin-bottom: 10px;
+    width:80%;
+    align-self: center;
 }
 
-#rpsBtns :hover{
-    color: white;
-    background-color: teal;
-    border: none;
+.choice{
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #rock{
+    padding-top: 5px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    align-content: center;
     background-color: black;
     color: white;
     margin: 10px;
+    width:30%;
+    height:150px;
 }
 
 #rock:hover {
+    color: white;
+    background-color: teal;
+    border: none;
     transform: scale(1.25);
 }
 
 
 #rock img{
     border: 1px solid black;
-    height:200px;
-    width:200px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height:80%;
+    width:80%;
 }
 
 #paper{
+    padding-top: 5px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    align-content: center;
     background-color: black;
     color: white;
     margin: 10px;
+    width:30%;
+    height:150px;
 }
 
 #paper:hover {
+    color: white;
+    background-color: teal;
+    border: none;
     transform: scale(1.25);
 }
 
 #paper img{
     border: 1px solid black;
-    height:200px;
-    width:200px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height:80%;
+    width:80%;
 }
 
 #scissors{
+    padding-top: 5px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    align-content: center;
     background-color: black;
     color: white;
     margin: 10px;
+    width:30%;
+    height:150px;
 }
 
 #scissors:hover {
+    color: white;
+    background-color: teal;
+    border: none;
     transform: scale(1.25);
 }
 
 #scissors img{
     border: 1px solid black;
-    height:200px;
-    width:200px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height:80%;
+    width:80%;
 }
 
 #selected{
@@ -157,132 +248,138 @@ h2{
     justify-content: center;
 }
 
-#player1{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-content: space-around;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    margin: 10%;
-}
-
-#name1{
-    
-}
-
-#player2{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-content: space-around;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    margin: 10%;
-}
-
-#select2{
-    
-}
-
-#name2{
-    
-}
-
 #stats{
-    margin-left: 10%;
-    margin-right: 10%;
-    max-width: 100%;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    height:20%;
+    align-self: center;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-self: center;
-
-
+    justify-content: space-evenly;
 }
 
 #player1Stats{
-    width:  40%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    text-align: center;
     justify-content: center;
-    align-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding:5px;
     background-color: black;
     color: white;
-}
-
-.jumbotron{
-
-}
-
-#wins1{
-    
-}
-
-.losses{
-    
-}
-
-#losses1{
-    
+    margin: 10px;
+    width: 40%; 
+    padding:5px;
+    border: 1px splid teal;
 }
 
 #player2Stats{
-    width:40%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    text-align: center;
     justify-content: center;
-    align-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding:5px;
     background-color: black;
     color: white;
-
+    margin: 10px;
+    width: 40%; 
+    padding:5px;
+    border: 1px splid teal;
 }
 
-.wins{
-    
+.updates{
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    font-weight:bold;
+    clear:both;
+    display: flex;
+    flex-direction: row;
+    border: 1px teal dotted;
+    padding: 10px;
+    align-self: center; 
+    margin: 10px;
+    text-align: center;
+    width: 75%;
 }
 
-#wins2{
-    
+#chatContainer{
+    width: 30%;
+    margin-right: 0%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    float: right;
+    height:100%;
+    border-left: 1px solid teal;
 }
 
-#losses2{
-    
+#chat { 
+    height: 500px;
+    margin:5px;
+    padding: 5px;
+    color:teal;
 }
 
-footer{
+#messageBoard{
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+}
 
+#gameAlerts{
+    padding: 5px;
+    border:1px solid teal;
+    width: 100%;
+    margin-bottom: 5px;
+    height: 50px;
+    font-style: italic;
+    text-align: left;
+    font-size: 14px;
+}
+
+#messages {
+    padding: 5px;
+    border:1px solid teal;
+    width: 100%;
+    margin-bottom: 5px;
+    height: 300px;
+    font-style: italic;
+    text-align: left;
+    font-size: 14px;
+    }
+
+#chatinput {
+    height:20%;
+    overflow:auto; 
+    width: 100%;
+    margin-top: 5px;
+    border: teal solid 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding:5px;
+}
+
+#sendMessage{
+    float:right;
+    margin-bottom: 5px;
+    color: white;
+    font-weight:bold;
+    background-color: teal;
+    border-color: teal;
+}
+
+#sendMessage:hover{
+    transform: scale(1.1)
 }
 
 #footer{
-    position: fixed;
-    left: 0;
-    bottom: 0%;
     width: 100%;
     border-top: darkgray 2px solid;
     background-color:black;
     color: white;
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    height: 75px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;  
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
  p{
@@ -303,71 +400,3 @@ img{
     height: 50px;
     width: 50px;
 }
-
-#wrapper{
-    height:100%;
-    margin-left: 0%;
-    border: 1px solid black;
-    margin-top: 5px;
-    margin-right: 5px;
-    padding:5px;
-    background-color: white;
-}
-
-#chat-container{
-    width:100%;
-    margin-left: 0%;
-    border: 1px solid black;
-    padding:5px;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-
-}
-
-a {
-    color:#0000FF;
-    text-decoration:none; 
-}
-  
-  
-#chatbox {
-    height:50%;
-    overflow:auto; 
-    width: 80%;
-    margin-top: 5px;
-    border: black solid 1px;
-}
-  
-#usermsg {
-    border:1px solid black;
-    width: 80%;
-    margin-bottom: 5px;
-}
-
-.chat { 
-    float:left; 
-}
-
-#submitmsg{
-    float:right;
-}
-
-  
-.logout { 
-    clear:both;
-    
-    border: solid black 1px;
-}   
-    
-.logout:hover { 
-    clear:both;
-    color:red; 
-} 
-
-#menu{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
