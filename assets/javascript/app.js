@@ -230,7 +230,7 @@ $( document ).ready(function() { //Start of document ready function
           $("#gameAlerts").html("Let the games begin!");
         }
         //If the game has started already, message is not shown
-        if (firstTimeUser == false) {
+        if (firstTimerUser == false) {
           return;
         }
         if( currentUsers == 0 && playerNumber == 0) {
