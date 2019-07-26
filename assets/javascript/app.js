@@ -131,6 +131,8 @@ $( document ).ready(function() { //Start of document ready function
       player1Choice = "";
       player2Choice = "";
 
+      $("#gameAlerts").html(`You and your opponent have not selected`); //How to get this to show up on only on player's screen
+
       //Updates wins and losses
       database.ref("/users/" + userId).update({
         wins: player1Wins,
