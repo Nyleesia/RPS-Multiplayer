@@ -7,7 +7,7 @@ let gamesPlayed = 0;
 let username = ""; //Trying to figure out how to make these unique as well (not for MVP)
 
 //Player variables
-let playerName = "";
+let player1Name = "";
 let player2Name = "";
 let player1Wins = 0;
 let player1Losses = 0;
@@ -100,7 +100,7 @@ $( document ).ready(function() { //Start of document ready function
           //User is signed in.
           userId = user.uid;
         } else {
-          //Alert("You are not logged in. Most likely too many players")
+          Alert("You are not logged in. Most likely too many players")
         }
     });
 
@@ -117,7 +117,7 @@ $( document ).ready(function() { //Start of document ready function
         });
 
       database.ref("/users/" + userId).onDisconnect().remove();
-      $("#player").html("Player Name: " + name);
+      $("#player1name").html("Player: " + name);
     }
 
     function updateResult(userId, wins, losses) {
@@ -199,7 +199,8 @@ $( document ).ready(function() { //Start of document ready function
           if (userId == childSnapshot.key) {
             //Gets and saves first player's information
             firstTimerUser = false;
-            $("#name1").html(": " + childSnapshot.val().userName);
+            $("#player1name").html("Player 1: " + childSnapshot.val().userName);
+            player1Name = childSnapshot.val().userName;
             if (player1Wins == 0 && player1Losses == 0) {
               player1Wins = childSnapshot.val().wins;
               player1Losses = childSnapshot.val().losses;
@@ -207,7 +208,8 @@ $( document ).ready(function() { //Start of document ready function
           }
           else {
             // Gets and saves opponent's information
-            $("#name2").html(": " + childSnapshot.val().userName);
+            $("#player2name").html("Player 2: " + childSnapshot.val().userName);
+            player2Name = childSnapshot.val().userName;
             player2Choice = childSnapshot.val().choice;
             player2Wins = childSnapshot.val().wins;
             player2Losses = childSnapshot.val().losses;
@@ -216,10 +218,10 @@ $( document ).ready(function() { //Start of document ready function
 
         if(gamesPlayed > 0 ) {
           // track wins and losses
-          $("#wins1").html(`Wins: ${player1Wins}`);
-          $("#losses1").html(`Losses: ${player1Losses}`);
-          $("#wins2").html(`Wins: ${player2Wins}`);
-          $("#losses2").html(`Losses: ${player2Losses}`);
+          $("#wins1").html(`Wins: ${player1Wins} &nbsp;&nbsp;`);
+          $("#losses1").html(` Losses: ${player1Losses}`);
+          $("#wins2").html(` Wins: ${player2Wins} &nbsp;&nbsp;`);
+          $("#losses2").html(` Losses: ${player2Losses}`);
         }
         if (player1Choice != "" && player2Choice != "") {
           // Decides winner
