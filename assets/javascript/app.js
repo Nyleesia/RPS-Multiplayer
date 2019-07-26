@@ -7,8 +7,8 @@ let gamesPlayed = 0;
 let username = ""; //Trying to figure out how to make these unique as well (not for MVP)
 
 //Player variables
-let player1Name = "YellowElephant";
-let player2Name = "PlainPajamas";
+let playerName = "";
+let player2Name = "";
 let player1Wins = 0;
 let player1Losses = 0;
 let player1Choice = ""; // Rock or paper or scissors
@@ -36,6 +36,9 @@ let userRef = firebase.database().ref("/users/");
 let messagesRef = firebase.database().ref("/messages/");
 let playerStatsRef= firebase.database().ref("/playerStats/");
 let userTree = {};
+
+  $("#gamePlayandChat").hide();
+  $("footer").hide();
 
 $( document ).ready(function() { //Start of document ready function
 
@@ -74,7 +77,6 @@ $( document ).ready(function() { //Start of document ready function
             $("#messages").append(`${childSnapshot.val().message} <br>`);
         });
     });
-
     //Collects the user information in a form on submit
     $("#userSubmit").on("click", function(event){
         event.preventDefault();//Prevents page reload before form submit
@@ -87,6 +89,10 @@ $( document ).ready(function() { //Start of document ready function
             userName: username
         });
         $("#userForm").html("");
+
+        $("#gamePlayandChat").show();
+        $("footer").show();
+        $("#messages").empty();
     });
     
     firebase.auth().onAuthStateChanged(function(user) {
@@ -152,7 +158,7 @@ $( document ).ready(function() { //Start of document ready function
 
       //If both players make the same choice, this resets choice and it's tie
       if(p1Choice == p2Choice) {
-        $("#gameUpdates").prepend("You both choose " + p1Choice + ". It's a tie!");
+        $("#gameUpdates").prepend(`You both choose ${p1Choice}. It's a tie!`);
         writeChoice(userId,"");
         player1Choice = "";
         player2Choice = "";
@@ -224,7 +230,7 @@ $( document ).ready(function() { //Start of document ready function
           $("#gameAlerts").html("Let the games begin!");
         }
         //If the game has started already, message is not shown
-        if (firstTimerUser == false) {
+        if (firstTimeUser == false) {
           return;
         }
         if( currentUsers == 0 && playerNumber == 0) {
@@ -249,7 +255,7 @@ $( document ).ready(function() { //Start of document ready function
         player1Choice = $(this).attr("id");
         writeChoice(userId, player1Choice);
     })
+
+  
 });//End of document ready function
-
-
 
