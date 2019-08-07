@@ -1,7 +1,7 @@
 // Initializes global variables
 //User variables
 let currentUsers= 0;
-let userId = "";
+let userId = performance.now() * Math.pow(10,10);
 let playerNumber = 0;
 let gamesPlayed = 0;
 let username = ""; //Trying to figure out how to make these unique as well (not for MVP)
@@ -99,9 +99,6 @@ $( document ).ready(function() { //Start of document ready function
         if (user) {
           //User is signed in.
           userId = user.uid;
-          if (userId == "") {
-            userId = performance.now() * Math.pow(10,10);
-          }
         } else {
           Alert("You are not logged in. Most likely too many players")
         }
