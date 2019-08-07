@@ -178,7 +178,7 @@ $( document ).ready(function() { //Start of document ready function
         updateResult(userId, 0,+1);
       }
       else if (p1Choice == "paper" && p2Choice == "rock") {
-        $("#gameUpdates").html(`${player1Name} played ${p1Choice} and ${player2Name} played ${p2Choice}. ${player2Name} won! ${player1Name} lost.`);
+        $("#gameUpdates").html(`${player1Name} played ${p1Choice} and ${player2Name} played ${p2Choice}. ${player1Name} won! ${player2Name} lost.`);
         updateResult(userId, +1,0);
       }
       else if (p1Choice == "paper" && p2Choice == "scissors") {
