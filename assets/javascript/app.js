@@ -232,6 +232,9 @@ $( document ).ready(function() { //Start of document ready function
           // Decides winner
           decideWinner(player1Choice, player2Choice);
         }
+        elseif (player2Choice != ""){
+          $("#gameAlerts").html(`Your opponent has selected. Waiting for you!`); 
+        }
         if( currentUsers == 2 && gamesPlayed == 0 && player1Choice == "") {
           // Only show if the game has not started 
           $("#gameAlerts").html("Let the games begin!");
