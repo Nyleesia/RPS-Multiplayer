@@ -99,6 +99,9 @@ $( document ).ready(function() { //Start of document ready function
         if (user) {
           //User is signed in.
           userId = user.uid;
+          if (userId == "") {
+            userId = performance.now() * Math.pow(10,10);
+          }
         } else {
           Alert("You are not logged in. Most likely too many players")
         }
@@ -160,7 +163,7 @@ $( document ).ready(function() { //Start of document ready function
 
       //If both players make the same choice, this resets choice and it's tie
       if(p1Choice == p2Choice) {
-        $("#gameUpdates").prepend(`You both choose ${p1Choice}. It's a tie!`);
+        $("#gameUpdates").html(`You both choose ${p1Choice}. It's a tie!`);
         writeChoice(userId,"");
         player1Choice = "";
         player2Choice = "";
